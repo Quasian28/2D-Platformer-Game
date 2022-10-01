@@ -29,4 +29,38 @@ public class PlayerController : MonoBehaviour
         transform.localScale = scale;
 
     }
+
+    //Crouch
+    private void PlayerCrouch()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+
+            animator.SetBool("Crouch", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+
+            animator.SetBool("Crouch", false);
+        }
+
+    }
+
+    //JUMP       
+    private void PlayerJump(float horizontal)
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("Jump", true);
+
+        }
+
+        else
+        {
+            animator.SetBool("Jump", false);
+        }
+
+
+    }
 }
